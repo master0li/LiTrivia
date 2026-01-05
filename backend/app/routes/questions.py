@@ -3,11 +3,25 @@ import httpx
 
 router = APIRouter(prefix="/questions", tags=["questions"])
 
+
 @router.get("/")
-async def get_question():
+async def get_question(site: int = 1):
+
+    url = "https://opentdb.com/api.php?amount=1"
+
+    match site:
+        case 1:
+            url = "https://opentdb.com/api.php?amount=1"
+        case 2:
+            url = "https://opentdb.com/api.php?amount=1&difficulty=easy"
+        case 3:
+            url = "https://opentdb.com/api.php?amount=1&difficulty=hard"
+        case _:
+            url = "https://opentdb.com/api.php?amount=1"
+
     try:
         async with httpx.AsyncClient() as client:
-            response = await client.get(f"https://opentdb.com/api.php?amount=1")
+            response = await client.get(url)
             response.raise_for_status()
             res = response.json()
 
