@@ -22,6 +22,27 @@
       "url": "http://localhost:8000",
       "webRoot": "${workspaceFolder}"
     }
+    ,
+    {
+      "name": "Frontend: Vite (npm run dev)",
+      "type": "pwa-node",
+      "request": "launch",
+      "runtimeExecutable": "npm",
+      "runtimeArgs": [
+        "run",
+        "dev"
+      ],
+      "cwd": "${workspaceFolder}/frontend",
+      "console": "integratedTerminal",
+      "outputCapture": "std"
+    },
+    {
+      "name": "Open Browser: Frontend",
+      "type": "pwa-chrome",
+      "request": "launch",
+      "url": "http://localhost:5173",
+      "webRoot": "${workspaceFolder}/frontend"
+    }
   ],
   "compounds": [
     {
@@ -29,6 +50,15 @@
       "configurations": [
         "Backend: FastAPI (Launch)",
         "Open Browser: Localhost 8000"
+      ]
+    }
+    ,
+    {
+      "name": "Backend + Vite + Frontend",
+      "configurations": [
+        "Backend: FastAPI (Launch)",
+        "Frontend: Vite (npm run dev)",
+        "Open Browser: Frontend"
       ]
     }
   ]
