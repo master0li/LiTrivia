@@ -7,10 +7,24 @@
       "command": "zsh",
       "args": [
         "-lc",
-        "cd frontend && source ~/.zshrc && nvm use && npm run dev"
+        "cd ${workspaceFolder}/frontend && source ~/.zshrc && nvm use && node -v && npm run dev"
       ],
-      "problemMatcher": [],
-      "isBackground": true
+      "isBackground": true,
+      "problemMatcher": {
+        "pattern": [
+          {
+            "regexp": ".",
+            "file": 1,
+            "location": 2,
+            "message": 3
+          }
+        ],
+        "background": {
+          "activeOnStart": true,
+          "beginsPattern": "VITE v",
+          "endsPattern": "Local:"
+        }
+      }
     }
   ]
 }
