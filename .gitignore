@@ -1,2 +1,66 @@
+# ======================
+# Python / uv
+# ======================
 __pycache__/
-*.pyc
+*.py[cod]
+*.pyo
+*.pyd
+*.so
+
+.venv/
+.uv/
+.python-version.local
+
+# ======================
+# uv / packaging
+# ======================
+dist/
+build/
+*.egg-info/
+
+# ======================
+# Environment / secrets
+# ======================
+.env
+.env.*
+!.env.example
+
+# ======================
+# Logs
+# ======================
+*.log
+
+# ======================
+# OS / editor noise
+# ======================
+.DS_Store
+Thumbs.db
+
+# ======================
+# VS Code
+# ======================
+.vscode/*
+!.vscode/settings.json
+!.vscode/launch.json
+!.vscode/tasks.json
+
+# ======================
+# Frontend (if applicable)
+# ======================
+frontend/node_modules/
+frontend/dist/
+frontend/.env
+frontend/.env.*
+
+# ======================
+# Testing / coverage
+# ======================
+.coverage
+htmlcov/
+.pytest_cache/
+
+# ======================
+# Misc
+# ======================
+*.swp
+*.swo
